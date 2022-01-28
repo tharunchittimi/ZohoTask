@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.zohotask.MyApplication
+import com.example.zohotask.R
 import com.example.zohotask.model.WeatherReportResponse
 import com.example.zohotask.network.ApiHelper
 import com.example.zohotask.room.DatabaseHelper
 import com.example.zohotask.room.entity.UserDetailsEntity
-import com.example.zohotask.util.SingleLiveEvent
 import com.example.zohotask.util.Utils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.zohotask.MyApplication
+import com.example.zohotask.R
 import com.example.zohotask.model.UsersListResponse
 import com.example.zohotask.model.WeatherReportResponse
 import com.example.zohotask.network.ApiHelper
@@ -63,7 +64,7 @@ class UsersListViewModel : ViewModel() {
         ApiHelper.getApi()
             .getUserDetails(
                 "https://randomuser.me/api/",
-                "10"
+                "100"
             )
             .enqueue(object : Callback<UsersListResponse> {
                 override fun onResponse(
