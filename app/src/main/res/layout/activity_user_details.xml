@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="userDetailsViewModel"
+            type="com.example.zohotask.viewmodels.UserDetailsViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".views.UserDetailsActivity">
+
+        <include
+            android:id="@+id/toolbarUserDetails"
+            layout="@layout/inflate_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:padding="15dp"
+            android:scrollbars="none">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="40dp">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideProfileLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.05" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideProfileRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.95" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/circle_shape"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintEnd_toEndOf="@id/guideProfileRight"
+                        app:layout_constraintStart_toStartOf="@id/guideProfileLeft"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_shape_small"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintBottom_toBottomOf="@id/imageView"
+                        app:layout_constraintEnd_toEndOf="@id/guideProfileRight"
+                        app:layout_constraintStart_toStartOf="@id/guideProfileLeft"
+                        app:layout_constraintTop_toTopOf="@id/txtProfileHeading" />
+
+                    <ImageView
+                        android:id="@+id/imgProfilePic"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="50dp"
+                        android:contentDescription="@string/app_name"
+                        android:elevation="30dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/no_img"
+                        app:layout_constraintBottom_toBottomOf="@id/imageView"
+                        app:layout_constraintEnd_toEndOf="@id/guideProfileRight"
+                        app:layout_constraintStart_toStartOf="@id/guideProfileLeft"
+                        app:layout_constraintTop_toBottomOf="@id/txtProfileHeading" />
+
+                    <TextView
+                        android:id="@+id/txtProfileHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/profile_bg"
+                        android:gravity="center"
+                        android:letterSpacing="0.5"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="8dp"
+                        android:text="PROFILE"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="@id/guideProfileRight"
+                        app:layout_constraintStart_toStartOf="@id/guideProfileLeft"
+                        app:layout_constraintTop_toTopOf="@id/imageView" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="70dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/circle_shape"
+                        app:layout_constraintEnd_toEndOf="@id/guideProfileRight"
+                        app:layout_constraintStart_toStartOf="@id/guideProfileLeft"
+                        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+                    <LinearLayout
+                        android:id="@+id/linearProfileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/txt_bg"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="8dp"
+                        app:layout_constraintEnd_toEndOf="@id/guideProfileRight"
+                        app:layout_constraintStart_toStartOf="@id/guideProfileLeft"
+                        app:layout_constraintTop_toBottomOf="@id/imgProfilePic">
+
+                        <TextView
+                            android:id="@+id/txtProfileName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.2"
+                            android:textColor="@color/colorPrimary"
+                            app:layout_constraintWidth_default="wrap"
+                            tools:text="THARUNKUMAR CHITTIMI" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtDetailsHeading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="DETAILS"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="@id/guideProfileRight"
+                        app:layout_constraintStart_toStartOf="@id/guideProfileLeft"
+                        app:layout_constraintTop_toBottomOf="@id/linearProfileName" />
+
+                    <View
+                        android:id="@+id/detailsLine"
+                        android:layout_width="24dp"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="@id/txtDetailsHeading"
+                        app:layout_constraintTop_toBottomOf="@id/txtDetailsHeading" />
+
+                    <TextView
+                        android:id="@+id/txtUserEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="@id/guideProfileRight"
+                        app:layout_constraintStart_toStartOf="@id/guideProfileLeft"
+                        app:layout_constraintTop_toBottomOf="@id/detailsLine" />
+
+                    <TextView
+                        android:id="@+id/txtUserPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="@id/guideProfileRight"
+                        app:layout_constraintStart_toStartOf="@id/guideProfileLeft"
+                        app:layout_constraintTop_toBottomOf="@id/txtUserEmail" />
+
+                    <TextView
+                        android:id="@+id/txtUserAge"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="@id/guideProfileRight"
+                        app:layout_constraintStart_toStartOf="@id/guideProfileLeft"
+                        app:layout_constraintTop_toBottomOf="@id/txtUserPhone" />
+
+                    <TextView
+                        android:id="@+id/txtUserAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="@id/guideProfileRight"
+                        app:layout_constraintStart_toStartOf="@id/guideProfileLeft"
+                        app:layout_constraintTop_toBottomOf="@id/txtUserAge" />
+
+                    <TextView
+                        android:id="@+id/txtWeatherReportHeading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="USER LOCATION WEATHER REPORT"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="@id/guideProfileRight"
+                        app:layout_constraintStart_toStartOf="@id/guideProfileLeft"
+                        app:layout_constraintTop_toBottomOf="@id/txtUserAddress" />
+
+                    <View
+                        android:id="@+id/weatherLine"
+                        android:layout_width="24dp"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="@id/txtWeatherReportHeading"
+                        app:layout_constraintTop_toBottomOf="@id/txtWeatherReportHeading" />
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/grpWeather"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:constraint_referenced_ids="weatherLine, txtWeatherReportHeading" />
+
+                    <LinearLayout
+                        android:id="@+id/llvLoadingLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/transparent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="15dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtUserAddress">
+
+                        <ImageView
+                            android:id="@+id/imgLoading"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/app_name"
+                            tools:src="@drawable/loading_gif" />
+
+                        <TextView
+                            android:id="@+id/txtPleaseWait"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="Loading..."
+                            android:textColor="@color/blue"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <include
+                        android:id="@+id/weatherReportDetails"
+                        layout="@layout/inflate_weather_report"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/weatherLine" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </ScrollView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>
